@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
+import 'swiggy.dart';
 //import 'package:tiktok/oddeven.dart';
 //import 'package:tiktok/overlapping.dart';
 
 void main() {
   runApp(
-    MaterialApp(home: TikTok()),
+    MaterialApp(home: SwiggyUI()),
   );
 }
 
@@ -33,10 +35,26 @@ class _TikTokState extends State<TikTok> {
           scrollDirection: Axis.vertical,
           controller: pg,
           children: [
-            onboardigcard(Image.asset("assets/img1.jpg", fit: BoxFit.fill,height: double.infinity,)),
-            onboardigcard(Image.asset("assets/img2.jpg", fit: BoxFit.fill,height: double.infinity,)),
-            onboardigcard(Image.asset("assets/img3.jpg", fit: BoxFit.fill,height: double.infinity,)),
-            onboardigcard(Image.asset("assets/img4.jpg", fit: BoxFit.fill,height: double.infinity,)),
+            onboardigcard(Image.asset(
+              "assets/img1.jpg",
+              fit: BoxFit.fill,
+              height: double.infinity,
+            )),
+            onboardigcard(Image.asset(
+              "assets/img5.jpg",
+              fit: BoxFit.fill,
+              height: double.infinity,
+            )),
+            onboardigcard(Image.asset(
+              "assets/img3.jpg",
+              fit: BoxFit.fill,
+              height: double.infinity,
+            )),
+            onboardigcard(Image.asset(
+              "assets/img4.jpg",
+              fit: BoxFit.fill,
+              height: double.infinity,
+            )),
             // Container(
             //   height: double.infinity,
             //   width: double.infinity,
