@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+//import 'package:tiktok/oddeven.dart';
+//import 'package:tiktok/overlapping.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: TikTok(),
-  ));
+  runApp(
+    MaterialApp(home: TikTok()),
+  );
 }
 
 class TikTok extends StatefulWidget {
@@ -14,51 +16,100 @@ class TikTok extends StatefulWidget {
 }
 
 class _TikTokState extends State<TikTok> {
+  PageController pg = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Row(
+      appBar: AppBar(
+        title: Text(
+          "M.S.Dhoni",
+        ),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        //color: Colors.cyan,
+        child: PageView(
+          scrollDirection: Axis.vertical,
+          controller: pg,
           children: [
-            Container(
-              height: double.infinity,
-              width: 300,
-              color: Colors.amber,
-            ),
+            onboardigcard(Image.asset("assets/img1.jpg", fit: BoxFit.fill,height: double.infinity,)),
+            onboardigcard(Image.asset("assets/img2.jpg", fit: BoxFit.fill,height: double.infinity,)),
+            onboardigcard(Image.asset("assets/img3.jpg", fit: BoxFit.fill,height: double.infinity,)),
+            onboardigcard(Image.asset("assets/img4.jpg", fit: BoxFit.fill,height: double.infinity,)),
             // Container(
-            //   height: 300,
+            //   height: double.infinity,
             //   width: double.infinity,
-            //   color: Colors.black,
+            //   child: Center(
+            //     child: Image.asset("assets/img1.jpg")
+            //   ),
             // ),
             // Container(
-            //   height: 300,
+            //   height: double.infinity,
             //   width: double.infinity,
-            //   color: Colors.blue,
+            //   child: Center(
+            //     child: Text(
+            //       "5w67257627w",
+            //     ),
+            //   ),
             // ),
             // Container(
-            //   height: 300,
+            //   height: double.infinity,
             //   width: double.infinity,
-            //   color: Colors.green,
+            //   child: Center(
+            //     child: Text(
+            //       "5w67257627w",
+            //     ),
+            //   ),
             // ),
             // Container(
-            //   height: 300,
+            //   height: double.infinity,
             //   width: double.infinity,
-            //   color: Colors.deepOrange,
+            //   child: Center(
+            //     child: Text(
+            //       "5w67257627w",
+            //     ),
+            //   ),
             // ),
             // Container(
-            //   height: 300,
+            //   height: double.infinity,
             //   width: double.infinity,
-            //   color: Colors.indigo,
-            // ),
-            // Container(
-            //   height: 300,
-            //   width: double.infinity,
-            //   color: Colors.lime,
-            // ),
+            //   child: Column(
+            //     mainAxisAlignment: MainAxisAlignment.end,
+            //     crossAxisAlignment: CrossAxisAlignment.end,
+            //     children: [
+            //   Icon(Icons.thumb_up,color: Colors.red,),
+            //   SizedBox(
+            //     height: 50,
+            //   ),
+            //   Icon(Icons.message_outlined,color: Colors.red,),
+            //   SizedBox(
+            //     height: 50,
+            //   ),
+            //   Icon(Icons.reply_rounded,color: Colors.red,),
+            //   SizedBox(
+            //     height: 50,
+            //   ),
+            //   Icon(Icons.music_note,color: Colors.red,),
+            //   SizedBox(height: 100,),
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),
+    );
+  }
+
+  Widget onboardigcard(Image img) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset("assets/img1.jpg", fit: BoxFit.fill),
+        SizedBox(
+          height: 20,
+        ),
+      ],
     );
   }
 }
