@@ -11,8 +11,8 @@ class OddEven extends StatefulWidget {
 }
 
 class _OddEvenState extends State<OddEven> {
-  TextEditingController num=TextEditingController();
-  
+  TextEditingController num = TextEditingController();
+  var result;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +34,7 @@ class _OddEvenState extends State<OddEven> {
                   ),
                 ),
                 TextField(
-                  controller: num ,
+                  controller: num,
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.number,
                 ),
@@ -44,15 +44,22 @@ class _OddEvenState extends State<OddEven> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      
+                      result = int.parse(num.text);
+                      if (result % 2 == 0) {
+                        result = "even";
+                      } else {
+                        result = "odd";
+                      }
                     });
                   },
                   child: Text(
                     "SUBMIT",
                   ),
                 ),
-                SizedBox(height: 20,),
-                Text("your number is ${num.text}"),
+                SizedBox(
+                  height: 20,
+                ),
+                Text("your number is $result"),
               ],
             ),
           ),
@@ -60,7 +67,6 @@ class _OddEvenState extends State<OddEven> {
       ),
     );
   }
-  alret(){
-    
-  }
+
+  alret() {}
 }
